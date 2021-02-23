@@ -22,15 +22,15 @@ export class WeatherService {
     return this.http.get(`${this.URI}${cityName},${countryCode}`)
     
   }
-
+  //retorna la data traida de firebase
   getDataWeather() {
     return this.weatherList = this.firebase.list('/weathers');
     
   }
 
-
+  //colocar los datos en firebase llamando al list weathers
   insertWeather(name: string, code: string, temp:string, hum: string, desc:string, lon:string, lat:string, date: string) {
-    console.log(name);
+    //console.log(name);
     this.weatherList = this.firebase.list('/weathers');
     this.weatherList.push({
       cityName: name,

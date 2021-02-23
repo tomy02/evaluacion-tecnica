@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
         let d = new Date();
 
         let date = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear();
-        console.log(this.weather)
+        //console.log(this.weather)
         this.insertWeather(cityName, countryCode, this.weather.main.temp, this.weather.main.humidity, this.weather.weather[0].description, this.weather.coord.lon, this.weather.coord.lat, date.toString())
       }
     )
