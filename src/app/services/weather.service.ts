@@ -25,7 +25,7 @@ export class WeatherService {
 
   getDataWeather() {
     return this.weatherList = this.firebase.list('/weathers');
-    //console.log(this.weatherList);
+    
   }
 
 
@@ -40,8 +40,8 @@ export class WeatherService {
       description: desc,
       longitude: lon,
       latitude: lat,
-      date: date,
-      url: `https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3283.642520923987!2d${lon}!3d${lat}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1613871595921!5m2!1ses-419!2sar`
+      date: date
+      
     });
     
     

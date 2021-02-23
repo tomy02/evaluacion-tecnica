@@ -18,12 +18,13 @@ export class AppComponent implements OnInit{
   ngOnInit() {
      
   }
-
+  
   insertWeather(name: string, code: string, temp: string, hum: string, desc:string, lon:string, lat:string, date: string) {
     this.watherService.insertWeather(name, code, temp, hum, desc, lon, lat, date)
     
   }
 
+  //Obtener clima actual e insertar en base de datos
   getWeather(cityName:string, countryCode:string) {
     this.watherService.getWeather(cityName, countryCode).subscribe(
       res => this.weather = res,
@@ -60,9 +61,6 @@ export class AppComponent implements OnInit{
     this.watherService.getDataWeather()
   }
 
-  /*historial() {
-    //this.getDataWeather()
-    console.log('historial');
-  }*/
+  
   
 }

@@ -34,7 +34,7 @@ export class WeatherListComponent implements OnInit {
   }
   //Completo el objeto Weather se puede llamar a cada dato desde weather-list-component.html
 
-  verMapa(latitude, longitude) {
+  getMap(latitude, longitude) {
     console.log(latitude + " " + longitude);
     let url = `https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3283.642520923987!2d${longitude}!3d${latitude}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1613871595921!5m2!1ses-419!2sar"`
     
