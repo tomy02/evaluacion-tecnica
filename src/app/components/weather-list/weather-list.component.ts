@@ -46,7 +46,29 @@ export class WeatherListComponent implements OnInit {
     divMapa.innerHTML = `
       <iframe src=${url} width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     `;
+   
 
+  }
+
+  lookRecord() {
+    
+    let record = document.querySelector('#record');
+
+    if (record.classList.contains('ocultar')) {
+      record.classList.add('visible');
+      record.classList.remove('ocultar');
+    }
+    else if (record.classList.contains('visible')) {
+      record.classList.add('ocultar');
+      record.classList.remove('visible');
+    }
+  }
+
+  searchWeather(buscar: HTMLInputElement) {
+    //console.log(buscar.value);
+    if (buscar.value == "") {
+      alert("No Encontrado");
+    } 
   }
  
 }

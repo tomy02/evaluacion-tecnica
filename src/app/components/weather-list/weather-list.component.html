@@ -1,7 +1,38 @@
 
+<div>
+    <div class="col-4 mx-auto" style="display: flex; border-top: 2px solid rgb(189, 188, 188); padding: 20px;">
+        <input type="text" class="form-control " name="buscar" #buscar placeholder="Nombre de Ciudad">
+        <button id="btnBuscar" class="btn btn-outline-primary m-1" (click)="searchWeather(buscar)">Buscar</button>
+    </div>
+
+    <div>
+        <div class="container">
+            <div >
+                <table class="table table table-hover " style="background-color: rgb(53, 242, 248);  border-radius: 1rem;"> 
+                <tbody >
+                <tr *ngFor="let weather of weatherList">
+                    <td *ngIf="weather.cityName == buscar.value">Ciudad: <b>{{weather.cityName}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Código: <b>{{weather.countryCode}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Temperatura: <b>{{weather.temperature}} ºC</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Humedad: <b>{{weather.humidity}} %</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Descripcion: <b>{{weather.description}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Long: <b>{{weather.longitude}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Lat: <b>{{weather.latitude}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Fecha: <b>{{weather.date}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value"><button (click)="getMap(weather.latitude, weather.longitude)" class="btn btn-warning">Ver Mapa</button></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        
+        </div>
+    </div>
+    
+    <button class="btn btn-warning m-3" (click)="lookRecord()">Ver Historial</button>
+</div>
 
 <div class="container">
-    <div class="card" style="background-color: rgb(46, 149, 180);">
+    <div class="card ocultar" style="background-color: rgb(46, 149, 180);" id="record">
         <div class="card-body">
             <h3 style="color: rgb(243, 243, 243);">Historial</h3>
             <table class="table table-sm table-hover" style="background-color: rgb(53, 242, 248);">
