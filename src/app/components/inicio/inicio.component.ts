@@ -1,28 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from './services/weather.service';
+import { WeatherService } from '../../services/weather.service';
+import swal from 'sweetalert';
+
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-inicio',
+  templateUrl: './inicio.component.html',
+  styleUrls: ['./inicio.component.css']
 })
-export class AppComponent implements OnInit{
+export class InicioComponent implements OnInit {
 
- // weather;
+  weather;
+  
 
-  constructor() {
-    /**private watherService: WeatherService */
-  }
+  constructor(private watherService: WeatherService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  
      
   }
 
-  
-  /**
-   * 
   insertWeather(name: string, code: string, temp: string, hum: string, desc:string, lon:string, lat:string, date: string) {
     this.watherService.insertWeather(name, code, temp, hum, desc, lon, lat, date)
     
@@ -52,11 +50,13 @@ export class AppComponent implements OnInit{
 
     cityName.value = '';
     countryCode.value = '';
-      
+      swal("Correcto", "", "success");
     } else {
-      alert('Por favor inserte datos correctos');
+      swal("Error", "Por favor coloque datos correctos", "error");
     }
     cityName.focus();
+
+    
 
     return false;
   }
@@ -65,7 +65,6 @@ export class AppComponent implements OnInit{
     this.watherService.getDataWeather()
   }
 
-   */
-  
-  
+ 
+
 }

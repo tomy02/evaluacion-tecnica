@@ -7,18 +7,18 @@
 
     <div>
         <div class="container">
-            <div >
+            <div class="col-7" style="margin: 0 auto;">
                 <table class="table table table-hover " style="background-color: rgb(53, 242, 248);  border-radius: 1rem;"> 
                 <tbody >
                 <tr *ngFor="let weather of weatherList">
-                    <td *ngIf="weather.cityName == buscar.value">Ciudad: <b>{{weather.cityName}}</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Código: <b>{{weather.countryCode}}</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Temperatura: <b>{{weather.temperature}} ºC</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Humedad: <b>{{weather.humidity}} %</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Descripcion: <b>{{weather.description}}</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Long: <b>{{weather.longitude}}</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Lat: <b>{{weather.latitude}}</b></td>
-                    <td *ngIf="weather.cityName == buscar.value">Fecha: <b>{{weather.date}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Ciudad <b>{{weather.cityName}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Código <b>{{weather.countryCode}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Temperatura <b>{{weather.temperature}} ºC</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Humedad <b>{{weather.humidity}} %</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Descripcion <b>{{weather.description}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Long <b>{{weather.longitude}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Lat <b>{{weather.latitude}}</b></td>
+                    <td *ngIf="weather.cityName == buscar.value">Fecha <b>{{weather.date}}</b></td>
                     <td *ngIf="weather.cityName == buscar.value"><button (click)="getMap(weather.latitude, weather.longitude)" class="btn btn-warning">Ver Mapa</button></td>
                 </tr>
                 </tbody>
@@ -52,8 +52,10 @@
             </table>
         </div>
         
-    </div>
-    <div id="mapa" class="m-3 p-3" style="border-radius: 20px; border:1px solid rgb(46, 149, 180);">
+    </div >
+    <div class="m-3">
+        <div id="mapa" class=" p-3" style="border-radius: 20px; border:1px solid rgb(46, 149, 180); max-width: 800px; margin: 0 auto;">
 
+        </div>
     </div>
 </div>

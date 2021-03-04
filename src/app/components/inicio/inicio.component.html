@@ -1,0 +1,40 @@
+<div style="background-color: rgb(46, 149, 180); height: 100px;">
+  
+  <h1 class="text-center" style="color: rgb(200, 242, 255);">CONSULTAR CLIMA</h1>
+
+
+</div>
+
+
+<div class="container my-5">
+  <form (submit)="submitLocation(cityName, countryCode)" style="max-width: 400px; margin: 0 auto; border: 2px solid rgb(46, 149, 180); background-color: rgb(121, 174, 190);">
+      <div class="text-center p-2">
+        <i class="fas fa-cloud-sun"  style="font-size: 3rem; color: rgb(255, 191, 43);"></i>
+      </div>
+      <div class="m-3">
+        <input type="text" class="form-control" placeholder="Nombre de la Ciudad" #cityName>
+      </div>
+      <div class="m-3">
+        <input type="text" class="form-control" placeholder="Código de País" #countryCode>
+      </div>
+       <div class="m-3">
+        <button class="btn btn-primary">Obtener Clima</button>
+      </div>
+  </form>
+</div>
+
+<div class="col-md-6 mx-auto" >
+  <div *ngIf="weather" class="card-body card text-center mb-2" style="background-color: rgb(156, 202, 253);">
+    <p>Temperatura: {{weather.main.temp}}ºC</p>
+    <p>Humedad: {{weather.main.humidity}}%</p>
+    <p>Descripcion: {{weather.weather[0].description}}</p>
+    <p>Longitud: {{weather.coord.lon}}</p>
+    <p>Latitud: {{weather.coord.lat}}</p>
+  </div>
+</div>
+
+<div class="text-center">
+  <app-weather-list></app-weather-list>
+</div>
+
+<router-outlet></router-outlet>

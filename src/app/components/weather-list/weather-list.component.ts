@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Weather } from 'src/app/models/weather';
 
+import swal from 'sweetalert';
+
 import { WeatherService } from '../../services/weather.service';
 
 @Component({
@@ -47,7 +49,7 @@ export class WeatherListComponent implements OnInit {
       <iframe src=${url} width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     `;
    
-
+    
   }
 
   lookRecord() {
@@ -57,6 +59,8 @@ export class WeatherListComponent implements OnInit {
     if (record.classList.contains('ocultar')) {
       record.classList.add('visible');
       record.classList.remove('ocultar');
+
+    
     }
     else if (record.classList.contains('visible')) {
       record.classList.add('ocultar');
@@ -67,8 +71,11 @@ export class WeatherListComponent implements OnInit {
   searchWeather(buscar: HTMLInputElement) {
     //console.log(buscar.value);
     if (buscar.value == "") {
-      alert("No Encontrado");
-    } 
+       swal("Error", "Por favor ingrese una ciudad valida", "error");
+    } else {
+      swal("Encontrado", "", "success");
+    }
+    
   }
  
 }

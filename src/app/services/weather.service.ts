@@ -11,7 +11,6 @@ export class WeatherService {
 
   apiKey = '5a48c3471f1790f3cdcad6a26f68ea2d';
   URI: string = '';
-
   weatherList: AngularFireList<any>;
 
   constructor(private http: HttpClient, private firebase: AngularFireDatabase) {
@@ -44,9 +43,12 @@ export class WeatherService {
       
     });
     
+
+    
     
   }
 
+  
   
 
 }

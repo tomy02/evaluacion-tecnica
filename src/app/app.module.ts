@@ -12,12 +12,16 @@ import { environment } from '../environments/environment';
 
 
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherListComponent
+    WeatherListComponent,
+    InicioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
